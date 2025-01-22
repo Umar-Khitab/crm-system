@@ -35,7 +35,7 @@ const EditLead = () => {
     setLoading(true);
     try {
       const updatedLead = { name, email, phone, status };
-      await axios.put(`http://localhost:5000/leads/${id}`, updatedLead);
+      await axios.put(`https://vercel.com/umarkhitabs-projects/crm-system-server/leads/${id}`, updatedLead);
       navigate("/");
     } catch (err) {
       setError("Error updating lead");

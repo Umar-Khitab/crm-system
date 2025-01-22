@@ -15,7 +15,7 @@ const LeadsList = () => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/leads");
+        const response = await axios.get("https://vercel.com/umarkhitabs-projects/crm-system-server/leads");
         setLeads(response.data);
       } catch (err) {
         setError("Error fetching leads");
@@ -32,7 +32,7 @@ const LeadsList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/leads/${id}`);
+      await axios.delete(`https://vercel.com/umarkhitabs-projects/crm-system-server/leads/${id}`);
       setLeads(leads.filter(lead => lead._id !== id));
     } catch (err) {
       setError("Error deleting lead");
