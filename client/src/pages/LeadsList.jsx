@@ -31,7 +31,6 @@ const LeadsList = () => {
   const filteredLeads = statusFilter === "All" ? leads : leads?.filter(lead => lead.status === statusFilter);
 
   const handleDelete = async (id) => {
-
     try {
       await axios.delete(`https://crm-system-server-ten.vercel.app/leads/${id}`);
       setLeads(leads?.filter(lead => lead._id !== id));
@@ -62,7 +61,7 @@ const LeadsList = () => {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <Box as="ul" m="5"> 
-        {filteredLeads.map((lead,i) => (
+        {filteredLeads?.map((lead,i) => (
               <Card.Root key={i}  mt="3" width="320px">
               <Card.Body gap="2">
            
