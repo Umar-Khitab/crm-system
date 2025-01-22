@@ -17,7 +17,7 @@ const AddLead = () => {
     setLoading(true);
     try {
       const newLead = { name, email, phone, status };
-      await axios.post("https://vercel.com/umarkhitabs-projects/crm-system-server/leads", newLead);
+      await axios.post("http://localhost:5000/leads", newLead);
       navigate("/");
     } catch (err) {
       setError("Error creating lead");
