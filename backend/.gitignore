@@ -1,0 +1,8 @@
+# Node.js specific files and directories
+
+node_modules/
+package-lock.json
+
+
+
+.env
