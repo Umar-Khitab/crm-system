@@ -15,7 +15,7 @@ const LeadsList = () => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const response = await axios.get("https://vercel.com/umarkhitabs-projects/crm-system-server/leads");
+        const response = await axios.get("https://crm-system-server-ten.vercel.app/leads");
         setLeads(response.data);
       } catch (err) {
         setError("Error fetching leads");
@@ -28,12 +28,13 @@ const LeadsList = () => {
   }, []);
 
   // Filter leads based on status
-  const filteredLeads = statusFilter === "All" ? leads : leads.filter(lead => lead.status === statusFilter);
+  const filteredLeads = statusFilter === "All" ? leads : leads?.filter(lead => lead.status === statusFilter);
 
   const handleDelete = async (id) => {
+
     try {
-      await axios.delete(`https://vercel.com/umarkhitabs-projects/crm-system-server/leads/${id}`);
-      setLeads(leads.filter(lead => lead._id !== id));
+      await axios.delete(`https://crm-system-server-ten.vercel.app/leads/${id}`);
+      setLeads(leads?.filter(lead => lead._id !== id));
     } catch (err) {
       setError("Error deleting lead");
     }
@@ -61,12 +62,13 @@ const LeadsList = () => {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <Box as="ul" m="5"> 
-        {filteredLeads.map((lead) => (
-              <Card.Root   mt="3" width="320px">
+        {filteredLeads.map((lead,i) => (
+              <Card.Root key={i}  mt="3" width="320px">
               <Card.Body gap="2">
            
                 <Card.Title mt="2">{lead.name}</Card.Title>
-                <Card.Description as={"li"} key={lead._id}>
+                <Card.Description as={"li"} >
+                  <p>{lead._id}</p>
             <p>Email: {lead.email}</p>
             <p>Phone: {lead.phone}</p>
             <p>Status: {lead.status}</p>

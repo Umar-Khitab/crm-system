@@ -11,12 +11,13 @@ const EditLead = () => {
   const [error, setError] = useState("");
 
   const { id } = useParams();
+  console.log("let see the id",id)
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLead = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/leads/${id}`);
+        const response = await axios.get(`https://crm-system-server-ten.vercel.app/leads/${id}`);
         const lead = response.data;
         setName(lead.name);
         setEmail(lead.email);
@@ -35,7 +36,7 @@ const EditLead = () => {
     setLoading(true);
     try {
       const updatedLead = { name, email, phone, status };
-      await axios.put(`https://vercel.com/umarkhitabs-projects/crm-system-server/leads/${id}`, updatedLead);
+      await axios.put(`https://crm-system-server-ten.vercel.app/leads/${id}`, updatedLead);
       navigate("/");
     } catch (err) {
       setError("Error updating lead");
