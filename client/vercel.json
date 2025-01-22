@@ -2,7 +2,7 @@
     "version": 2,
     "rewrites": [
       {
-        "source": "/api/:path*",
+        "source": "/:path*",
         "destination": "https://crm-system-server-ten.vercel.app/:path*"
       }
     ]
