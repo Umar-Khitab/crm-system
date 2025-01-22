@@ -3,7 +3,7 @@
     "rewrites": [
       {
         "source": "/api/:path*",
-        "destination": "https://crm-system-server-ten.vercel.app/:path*"
+        "destination": "https://crm-system-server-ten.vercel.app/leads/:path*"
       }
     ]
   }
