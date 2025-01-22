@@ -1,1 +1,1 @@
-Deployed this project on thid url ---->  https://crm-system-sage.vercel.app/
+Deployed this project on this url ---->  https://crm-system-sage.vercel.app/
