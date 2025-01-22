@@ -1,0 +1,19 @@
+
+.select_box_container{
+  display: flex;
+  align-items: center;
+}
+.select_box{
+  font-size: 15px;
+}
+.select_input{
+    font-size: 15px; /* Increases the font size */
+    padding: 0px; /* Adds padding inside the select */
+    width: 150px; /* Sets the width of the select element */
+    height: 25px; /* Sets the height of the select element */
+    border: 2px solid #ccc; /* Adds a border */
+    border-radius: 5px; /* Rounds the corners */
+    background-color: #f9f9f9; /* Sets the background color */
+    color: #333; /* Sets the text color */
+    
+}
